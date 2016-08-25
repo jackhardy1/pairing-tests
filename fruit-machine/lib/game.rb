@@ -21,6 +21,8 @@ class Game
     roll
     if jackpot?
       jackpot_bonus
+    elsif semi_jackpot?
+      semi_jackpot_bonus
     else
       @player.deduct
       @jackpot += 1
@@ -34,6 +36,15 @@ class Game
   end
 
   private
+
+  def semi_jackpot?
+    @roll.uniq.length == 4
+  end
+
+  def semi_jackpot_bonus
+    @player.add (@jackpot / 2)
+    @jackpot = @jackpot / 2
+  end
 
   def jackpot?
     @roll.uniq.length == 1

@@ -11,6 +11,7 @@ describe Game do
   context 'when player does not win' do
     it 'money is added to jackpot' do
       allow(subject).to receive(:jackpot?).and_return false
+      allow(subject).to receive(:semi_jackpot?).and_return false
       subject.play
       expect(subject.show_jackpot).to eq 101
     end
@@ -19,8 +20,18 @@ describe Game do
   context 'when player gets all same colour' do
     it 'jackpot is depleted' do
       allow(subject).to receive(:jackpot?).and_return true
+      allow(subject).to receive(:semi_jackpot?).and_return false
       subject.play
       expect(subject.show_jackpot).to eq 0
+    end
+  end
+
+  context 'when player gets one of each colour' do
+    it 'player wins half of jackpot' do
+      allow(subject).to receive(:jackpot?).and_return false
+      allow(subject).to receive(:semi_jackpot?).and_return true
+      subject.play
+      expect(subject.show_jackpot).to eq 50
     end
   end
 

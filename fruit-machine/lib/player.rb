@@ -2,7 +2,7 @@ class Player
 
   DEFAULT_BALANCE = 20
 
-  def initialize(name = 'undefined', balance = DEFAULT_BALANCE)
+  def initialize name = 'undefined', balance = DEFAULT_BALANCE
     @name = name
     @balance = balance
   end
