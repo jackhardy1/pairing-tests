@@ -1,10 +1,10 @@
-# Jack notes
+# Instructions for use
 
-Classes
-
-* Game - responsible for outome, jackpot
-* Player - responsible for personal money
-* Rules -
+```
+git clone git@github.com:jackhardy1/pairing-tests.git
+bundle install
+rspec
+```
 
 # Fruit machine
 
