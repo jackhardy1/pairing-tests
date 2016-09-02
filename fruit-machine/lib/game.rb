@@ -6,16 +6,12 @@ class Game
   DEFAULT_JACKPOT = 100
   COLOURS = ['black','white','green','yellow']
 
-  def initialize player = Player.new, jackpot = DEFAULT_JACKPOT, rules = Rules.new
+  def initialize player = Player.new, rules = Rules.new, jackpot = DEFAULT_JACKPOT
     @player = player
     @jackpot = jackpot
     @rules = rules
     @colours = COLOURS
     @roll = []
-  end
-
-  def show_jackpot
-    @jackpot
   end
 
   def play
@@ -33,12 +29,9 @@ class Game
   private
 
   def fare_calculator
-    if @rules.jackpot? @roll
-      jackpot_bonus
-    elsif @rules.semi_jackpot? @roll
-      semi_jackpot_bonus
-    elsif @rules.other_bonus? @roll
-      other_bonus_jackpot
+    if @rules.jackpot? @roll then jackpot_bonus
+    elsif @rules.semi_jackpot? @roll then semi_jackpot_bonus
+    elsif @rules.other_bonus? @roll then other_bonus_jackpot
     else
       @player.deduct
       @jackpot += 1
@@ -66,18 +59,3 @@ class Game
     4.times { @roll.push numbers.sample }
   end
 end
-
-g = Player.new('jack',100)
-a = Game.new(g)
-p a.play
-p a.print_roll
-p a.play
-p a.print_roll
-p a.play
-p a.print_roll
-p a.play
-p a.print_roll
-p a.play
-p a.print_roll
-p a.play
-p a.print_roll

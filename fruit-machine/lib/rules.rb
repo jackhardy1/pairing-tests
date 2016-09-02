@@ -1,8 +1,5 @@
 class Rules
 
-  def initialize
-  end
-
   def jackpot? roll
     roll.uniq.length == 1
   end
