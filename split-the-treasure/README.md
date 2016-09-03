@@ -1,3 +1,17 @@
+# User stories
+
+As a treasure hunter
+so that I can only split treasure evenly
+I would like to know whether it can be split among a certain number of people
+
+As a treasure hunter
+So that I know how much treasure I will receive
+I would like to know how it will be split
+
+As a treasure hunter
+To satisfy my curiosity
+I would like to know how the treasure could have been split
+
 # Split the treasure
 
 A crew of treasure hunters have acquired a chest of valuable gems. However they are so progressive they will only take the treasure if it can be split equally between them, otherwise they will just bury it again.
