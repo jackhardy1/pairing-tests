@@ -19,7 +19,8 @@
     "mocha": "^3.0.2"
   },
   "scripts": {
-    "test": "mocha --reporter nyan"
+    "test": "mocha --reporter nyan",
+    "test:watch": "mocha --watch ./test ./"
   },
   "author": "",
   "license": "ISC",

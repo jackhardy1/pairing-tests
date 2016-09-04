@@ -4,7 +4,6 @@ var Robot = require('../robot.js').Robot;
 var Grid = require('../grid.js').Grid;
 
 describe('Robot', function(){
-
   describe('default settings', function(){
     it('robot starts at x-5, y-5', function(){
       var subject = new Robot();
@@ -45,18 +44,18 @@ describe('Robot', function(){
     });
   });
 
-  // describe('error cases', function(){
-  //   it('throws an error when tries to move out of bounds', function(done){
-  //   var grid = new Grid(10,10,0,0);
-  //   var subject = new Robot(grid);
-  //   console.log(subject);
-  //   // var handler = function(){subject.moveWest();}
-  //   expect(subject.moveWest).to.throw(new AssertionError('Out of bounds!'));
-  //
-  //   expect(subject.current_x_position).to.equal(0);
-  //   expect(subject.current_y_position).to.equal(0);
-  //   done();
-  //   });
-  // });
+  describe('moving the crate', function(){
+    it('can pick up a crate', function(){
+      var subject = new Robot;
+      subject.pickUpCrate();
+      expect(subject.isLiftingCrate).to.be.true
+    });
 
+    it('can pick up a crate', function(){
+      var subject = new Robot;
+      subject.pickUpCrate();
+      subject.dropCrate();
+      expect(subject.isLiftingCrate).to.be.false
+    });
+  });
 });

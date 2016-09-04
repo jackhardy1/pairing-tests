@@ -39,4 +39,24 @@ describe('Control', function(){
       expect(control.robot.grid.current_x_position).to.equal(5);
     });
   });
+
+  describe('moving the crate', function(){
+    var grid;
+    var robot;
+    var control;
+
+    beforeEach(function () {
+      grid = new Grid(10,10,5,5);
+      robot = new Robot(grid);
+      control = new Control(robot);
+      grid.addCrate(5,5);
+      grid.addCrate(8,9);
+    });
+
+    xit('can pick up a crate', function(){
+      control.enterInstructions('G');
+      console.log(control.robot.isLiftingCrate);
+      expect(control.robot.isLifitngCrate).to.be.true
+    });
+  });
 });

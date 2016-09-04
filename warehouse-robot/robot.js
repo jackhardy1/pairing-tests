@@ -1,8 +1,18 @@
 var Grid = require('./grid.js').Grid
 
 class Robot {
+
   constructor(grid = new Grid){
     this.grid = grid;
+    this.isLiftingCrate = false;
+  }
+
+  pickUpCrate(){
+    this.isLiftingCrate = true;
+  }
+
+  dropCrate(){
+    this.isLiftingCrate = false;
   }
 
   moveNorth(){
