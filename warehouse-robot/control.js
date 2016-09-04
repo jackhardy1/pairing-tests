@@ -1,10 +1,8 @@
 var Robot = require('./robot.js').Robot;
-var Grid = require('./grid.js').Grid;
 
 class Control {
-  constructor(robot = new Robot, grid = new Grid){
+  constructor(robot = new Robot){
     this.robot = robot;
-    this.grid = grid;
   }
 
   enterInstructions(instructions){

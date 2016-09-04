@@ -5,14 +5,25 @@ class Robot {
   constructor(grid = new Grid){
     this.grid = grid;
     this.isLiftingCrate = false;
+    this.carriedCrate = [];
   }
 
   pickUpCrate(){
-    this.isLiftingCrate = true;
+    if (this.grid.cratePresent()) {
+      this.isLiftingCrate = true;
+    } else if (this.grid.cratePresent() === false) {
+      console.log('no crate present!');
+    } else if (this.isLiftingCrate === true) {
+      console.log('already lifting a crate');
+    }
   }
 
   dropCrate(){
-    this.isLiftingCrate = false;
+    if (this.grid.cratePresent() && this.isLiftingCrate === true) {
+      console.log('cannot drop a crate on a crate');
+    } else {
+      this.isLiftingCrate = false;
+    }
   }
 
   moveNorth(){

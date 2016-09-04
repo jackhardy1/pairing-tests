@@ -3,8 +3,8 @@ var Control = require('../control.js').Control;
 var Robot = require('../robot.js').Robot;
 var Grid = require('../grid.js').Grid;
 
-describe('Control', function(){
-  describe('movements', function(){
+describe('Control: ', function(){
+  describe('Movements: ', function(){
     var grid;
     var robot;
     var control;
@@ -40,7 +40,7 @@ describe('Control', function(){
     });
   });
 
-  describe('moving the crate', function(){
+  describe('Moving the crate: ', function(){
     var grid;
     var robot;
     var control;
@@ -49,14 +49,28 @@ describe('Control', function(){
       grid = new Grid(10,10,5,5);
       robot = new Robot(grid);
       control = new Control(robot);
-      grid.addCrate(5,5);
-      grid.addCrate(8,9);
     });
 
-    xit('can pick up a crate', function(){
+    it('Can pick up a crate', function(){
       control.enterInstructions('G');
-      console.log(control.robot.isLiftingCrate);
-      expect(control.robot.isLifitngCrate).to.be.true
+      expect(control.robot.isLiftingCrate).to.be.true
+    });
+
+    it('Can drop a crate', function(){
+      control.enterInstructions('G S D');
+      expect(control.robot.isLiftingCrate).to.be.false
+    });
+
+    it('Cannot pick up a crate if not there', function(){
+      control.enterInstructions('N G');
+      expect(control.robot.isLiftingCrate).to.be.false
+    });
+
+    it('Cannot drop a crate on another crate', function(){
+      control.enterInstructions('G N D');
+      console.log(control.robot);
+      console.log(control.robot.grid.crates);
+      expect(control.robot.isLiftingCrate).to.be.true
     });
   });
 });
