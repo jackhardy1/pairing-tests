@@ -1,30 +1,34 @@
 var Grid = require('./grid.js').Grid
 
 class Robot {
-  constructor(grid = new Grid, x_axis, y_axis){
+  constructor(grid = new Grid){
     this.grid = grid;
   }
 
   moveNorth(){
-    this.grid.y_axis += 1
+    if (!(this.grid.current_y_position + 1 > this.grid.y_limit)) {
+      this.grid.current_y_position += 1
+    }
   }
 
   moveEast(){
-    this.grid.x_axis += 1
+    if(!(this.grid.current_x_position + 1 > this.grid.x_limit)) {
+      this.grid.current_x_position += 1;
+    }
   }
 
   moveSouth(){
-    this.grid.y_axis -= 1
+    if(!(this.grid.current_y_position - 1 < 0)) {
+      this.grid.current_y_position -= 1;
+    }
   }
 
   moveWest(){
-    this.grid.x_axis -= 1
+    if (!(this.grid.current_x_position - 1 < 0)) {
+    this.grid.current_x_position -= 1;
+    }
   }
-
 }
-
-
-
 
 
 module.exports.Robot = Robot;
