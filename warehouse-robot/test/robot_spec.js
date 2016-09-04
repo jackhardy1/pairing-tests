@@ -57,5 +57,11 @@ describe('Robot', function(){
       subject.dropCrate();
       expect(subject.isLiftingCrate).to.be.false
     });
+
+    xit('cannot pick up a crate if already lifting one', function(){
+      var subject = new Robot;
+      subject.pickUpCrate();
+      expect()
+    })
   });
 });

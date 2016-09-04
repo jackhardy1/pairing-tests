@@ -21,7 +21,11 @@ class Control {
       } else if (instructionsArray[i] === 'S') {
         this.robot.moveSouth();
       } else if (instructionsArray[i] === 'W') {
-        this.robot.moveSouth();
+        this.robot.moveWest();
+      } else if (instructionsArray[i] === 'G') {
+        this.robot.pickUpCrate();
+      } else if (instructionsArray[i] === 'D') {
+        this.robot.dropCrate();
       }
     }
   }

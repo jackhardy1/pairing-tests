@@ -28,9 +28,9 @@ describe('Control', function(){
     });
 
     it('can move robot multiple commands', function(){
-      control.enterInstructions('N N S W E E S N W S');
-      expect(control.robot.grid.current_y_position).to.equal(3);
-      expect(control.robot.grid.current_x_position).to.equal(7);
+      control.enterInstructions('N N S W E E S N W');
+      expect(control.robot.grid.current_y_position).to.equal(6);
+      expect(control.robot.grid.current_x_position).to.equal(5);
     });
 
     it('robot cannot move outside of warehouse bounds', function(){
