@@ -27,5 +27,4 @@ class Control {
   }
 }
 
-
 module.exports.Control = Control;
