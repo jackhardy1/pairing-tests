@@ -1,0 +1,27 @@
+{
+  "name": "warehouse-robot",
+  "version": "1.0.0",
+  "description": "We have installed a robot in our warehouse and now we need to be able to send it commands to control it. We need you to implement the control mechanism.",
+  "main": "grid.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "babel-register": "^6.14.0",
+    "chai": "^3.5.0",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "scripts": {
+    "test": "mocha --reporter nyan"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}

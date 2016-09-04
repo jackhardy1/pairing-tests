@@ -1,3 +1,10 @@
+As a controller,
+So that I can control a robot for me,
+I would like to be able to move it west, north, east and south
+
+
+
+
 # Robot Warehouse
 
 We have installed a robot in our warehouse and now we need to be able to send it commands to control it. We need you to implement the control mechanism.
@@ -50,4 +57,3 @@ There are some rules about moving crates:
 We have expanded the robot's grid system to include diagonal tracks. Modify the robot's movement so that it can take advantage of the new diagonals. We don't want to change all the movement programmes though so don't change the syntax of the commands we send.
 
 So for example if the robot starts in the south-west corner of the warehouse then issuing the command "E N" should move the robot to the same place as if it moved east once and north once but it should only move once.
-
