@@ -18,7 +18,7 @@ class Deck
   end
 
   def find_value rank
-    rank.is_a?(Integer) ? rank : 11
+    rank.to_i == 0 ? 11 : rank.to_i
   end
 
   def shuffle!

@@ -2,20 +2,16 @@ require_relative './deck.rb'
 
 class Game
 
-  attr_reader :dec
-
-  def initialize player, rules = Rules.new, deckKlass = Deck.new
-    @player = player
-    @rules = rules
+  def initialize rulesKlass = Rules.new, deckKlass = Deck.new
+    @rulesKlass = rulesKlass
     @deckKlass = deckKlass
   end
 
-  def deal_hand player
-    2.times {player.hand << @deckKlass.deal}
-    bust?
+  def deal_hand  cards,player
+    cards.times {player.hand << @deckKlass.deal}
   end
 
-  def bust?
-    false
+  def bust? player
+    @rulesKlass.bust? player.hand
   end
 end
