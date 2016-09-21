@@ -8,4 +8,8 @@ class Rules
     hand.reduce(:+) == 21
   end
 
+  def bust? hand
+    hand.reduce(:+) > 21
+  end
+
 end
