@@ -10,5 +10,4 @@ class Dealer
   def show_hand
     @hand
   end
-
 end

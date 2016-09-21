@@ -15,6 +15,7 @@ class Deck
         @cards << @cardKlass.new(rank, suit, find_value(rank))
       end
     end
+    @cards.shuffle!
   end
 
   def find_value rank

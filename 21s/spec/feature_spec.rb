@@ -1,16 +1,17 @@
-# require_relative '../lib/game.rb'
-#
-# describe Game do
-#
-#   context 'player_1' do
-#     it 'feature' do
-#       player_1 = Player.new "Jack"
-#       new_game = Game.new player_1
-#       new_game.deal_hand player_1
-#       p player_1.hand
-#       p new_game.pack
-#       new_game.deal_hand player_1
-#       p player_1.hand
-#     end
-#   end
-# end
+require_relative '../lib/game.rb'
+require_relative '../lib/player.rb'
+require_relative '../lib/dealer.rb'
+
+describe Game do
+
+  let(:sam) {Player.new "Sam"}
+  let(:dealer) {Dealer.new "Dealer"}
+  let(:new_game) {Game.new}
+
+  context 'feature spec' do
+    it 'rules' do
+     new_game.deal_hand 2, sam
+     new_game.deal_hand 2, dealer
+    end
+  end
+end

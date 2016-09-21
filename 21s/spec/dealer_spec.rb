@@ -12,7 +12,7 @@ describe Dealer do
 
   context 'hand' do
     it 'is empty at beginning' do
-      expect(new_dealer.hand).to eq []
+      expect(new_dealer.show_hand).to eq []
     end
   end
 end
