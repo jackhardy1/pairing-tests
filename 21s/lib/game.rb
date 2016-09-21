@@ -16,11 +16,11 @@ class Game
 
   def deal_hand  cards, player
     cards.times {player.hand << @deckKlass.deal}
-    raise "#{player.name} is bust, your score was #{player.hand}" if bust? player.show_hand
+    # raise "#{player.name} is bust, your score was #{player.hand}" if bust? player.show_total
   end
 
-  def bust? hand
-    @rulesKlass.bust? hand
+  def bust? total
+    @rulesKlass.bust? total
   end
 
   def game_over

@@ -11,4 +11,10 @@ class Player
     @hand
   end
 
+  def show_total 
+    values = []
+    @hand.each {|card| values << card.value}
+    return values.reduce(:+)
+  end
+
 end
