@@ -1,23 +1,21 @@
-require_relative './player.rb'
+require_relative './deck.rb'
 
 class Game
 
-  attr_reader :pack
+  attr_reader :dec
 
-  def initialize player
+  def initialize player, rules = Rules.new, deckKlass = Deck.new
     @player = player
-    @pack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
-      15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
-      28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
-      41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
+    @rules = rules
+    @deckKlass = deckKlass
   end
 
   def deal_hand player
-    player.hand = []
-    2.times {player.hand << @pack.shuffle.sample}
-    player.hand.each do |card|
-      @pack.delete(card)
-    end
+    2.times {player.hand << @deckKlass.deal}
+    bust?
   end
 
+  def bust?
+    false
+  end
 end

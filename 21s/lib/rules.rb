@@ -1,15 +1,18 @@
 class Rules
 
-  def initialize
-
-  end
-
   def blackjack? hand
-    hand.reduce(:+) == 21
+    find_value(hand).reduce(:+) == 21
   end
 
   def bust? hand
-    hand.reduce(:+) > 21
+    find_value(hand).reduce(:+) > 21
   end
 
+  private
+
+  def find_value hand
+    values = []
+    hand.each {|card| values << card.value}
+    return values
+  end
 end
