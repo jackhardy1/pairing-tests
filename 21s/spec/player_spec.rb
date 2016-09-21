@@ -10,17 +10,17 @@ describe Player do
     end
   end
 
-  context 'balance' do
-    it 'can add balance' do
-      new_player.add 10
-      expect(new_player.balance).to eq 20
-    end
-
-    it 'can deduct balance' do
-      new_player.deduct 5
-      expect(new_player.balance).to eq 5
-    end
-  end
+  # context 'balance' do
+  #   it 'can add balance' do
+  #     new_player.add 10
+  #     expect(new_player.balance).to eq 20
+  #   end
+  #
+  #   it 'can deduct balance' do
+  #     new_player.deduct 5
+  #     expect(new_player.balance).to eq 5
+  #   end
+  # end
 
   context 'hand' do
     it 'is empty at beginning' do

@@ -18,7 +18,13 @@ class Deck
   end
 
   def find_value rank
-    rank.to_i == 0 ? 11 : rank.to_i
+    if rank.to_i == 0 && rank != "A"
+      10
+    elsif rank == "A"
+      11
+    else
+      rank.to_i
+    end
   end
 
   def shuffle!

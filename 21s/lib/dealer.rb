@@ -1,4 +1,4 @@
-class Player
+class Dealer
 
   attr_accessor :name, :hand
 
