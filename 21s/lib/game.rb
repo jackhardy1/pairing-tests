@@ -19,8 +19,8 @@ class Game
     # raise "#{player.name} is bust, your score was #{player.hand}" if bust? player.show_total
   end
 
-  def bust? total
-    @rulesKlass.bust? total
+  def bust? player
+    @rulesKlass.bust? player.total
   end
 
   def game_over
