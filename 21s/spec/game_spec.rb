@@ -4,7 +4,8 @@ require 'player'
 describe Game do
 
   let(:player_1) {Player.new "Jack"}
-  let(:new_game) {Game.new}
+  let(:dealer) {Player.new "dealer"}
+  let(:new_game) {Game.new player_1, dealer}
 
   context 'dealing a new hand' do
     it 'player has two cards at first deal' do

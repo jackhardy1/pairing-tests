@@ -6,7 +6,7 @@ describe Game do
 
   let(:sam) {Player.new "Sam"}
   let(:dealer) {Dealer.new "Dealer"}
-  let(:new_game) {Game.new}
+  let(:new_game) {Game.new sam,dealer}
 
   context 'feature spec' do
     it 'rules' do
